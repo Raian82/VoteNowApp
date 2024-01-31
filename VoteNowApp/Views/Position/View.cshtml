@@ -1,0 +1,24 @@
+﻿@model VoteNowApp.Models.ViewModel.UpdatePositionViewModel
+@{
+}
+
+<h1 class="text-light">Edit Position'</h1>
+<form method="post" action="View" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label text-light">ID</label>
+        <input type="text" class="form-control" asp-for="Id" readonly>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label text-light">Position</label>
+        <input type="text" class="form-control" asp-for="title">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-danger"
+            asp-action="Delete"
+            asp-controller="Position">
+        Delete
+    </button>
+    <a class='btn btn-dark' asp-controller="Position" asp-action="Index">Cancel</a>
+</form>
+<link href="~/css/body.css" rel="stylesheet" />

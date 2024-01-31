@@ -1,0 +1,46 @@
+﻿@model List<VoteNowApp.Models.Model.CandidateModel>
+
+<h2 class="text-light">Voting Results</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Candidate</th>
+            <th>Position</th>
+            <th>Vote Counts</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var candidate in Model)
+        {
+            <tr>
+                <td>@candidate.candidatename</td>
+                <td>@candidate.position</td>
+                <td>@candidate.Votes</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2 class="text-light">Winners</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Winner</th>
+            <th>Vote Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var position in Model.Select(c => c.position).Distinct())
+        {
+            var winner = Model.Where(c => c.position == position).OrderByDescending(c => c.Votes).FirstOrDefault();
+            <tr>
+                <td>@position</td>
+                <td>@(winner != null ? winner.candidatename : "No Winner")</td>
+                <td>@(winner != null ? winner.Votes.ToString() : "0")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<link href="~/css/result.css" rel="stylesheet" />
+<link href="~/css/body.css" rel="stylesheet" />

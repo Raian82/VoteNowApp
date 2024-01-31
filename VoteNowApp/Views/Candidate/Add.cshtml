@@ -1,0 +1,45 @@
+﻿@model VoteNowApp.Models.ViewModel.AddCandidateViewModel
+@{
+}
+
+<h1 class="text-light">Add Candidate</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label text-light">Voter Name</label>
+        <input type="text" class="form-control" asp-for="candidatename" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label text-light">ID Number</label>
+        <input type="number" class="form-control" asp-for="number" required>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label text-light">Course</label>
+        <select type="text" class="form-control" asp-for="course" required>
+            <option>-- SELECT COURSE --</option>
+            <option value="BS IT - Database System">BS IT - Database System</option>
+            <option value="BS IT - Network System">BS IT - Network System</option>
+            <option value="BS Information System">BS Information System</option>
+            <option value="BS Computer Science">BS Computer Science</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label text-light">Year Level</label>
+        <select type="text" class="form-control" asp-for="yearlevel" required>
+            <option>-- SELECT YEAR --</option>
+            <option value="1st year">1st year</option>
+            <option value="2nd year">2nd year</option>
+            <option value="3rd year">3rd year</option>
+            <option value="4th year">4th year</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="" class="form-label text-light">Position</label>
+        <select asp-for="position" asp-items="Model.Positions" class="form-control">
+            <option>-- Select Position --</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a class='btn btn-danger' asp-controller="Candidate" asp-action="Index">Cancel</a>
+</form>
+<link href="~/css/body.css" rel="stylesheet" />

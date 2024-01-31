@@ -1,0 +1,27 @@
+﻿@model List<VoteNowApp.Models.Model.PositionModel>
+@{
+}
+
+<h1 class="text-light">Position</h1>
+<p>
+    <a class='btn btn-primary btn-sm' asp-controller="Position" asp-action="Add">New Position</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Position in Model)
+        {
+            <tr>
+                <td>@Position.title</td>
+                <td><a class="btn btn-dark" href="Position/View/@Position.Id">Options</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<link href="~/css/body.css" rel="stylesheet" />
+<link href="~/css/table.css" rel="stylesheet" />

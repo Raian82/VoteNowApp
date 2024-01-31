@@ -1,0 +1,15 @@
+﻿@model VoteNowApp.Models.ViewModel.AddPositionViewModel
+@{
+}
+
+<h1 class="text-light">Add Position</h1>
+<form method="post" action="Add" class="mt-5">
+    <div class="mb-3">
+        <label for="" class="form-label text-light">New Position</label>
+        <input type="text" class="form-control" asp-for="title" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <a class='btn btn-danger' asp-controller="Position" asp-action="Index">Cancel</a>
+</form>
+<link href="~/css/body.css" rel="stylesheet" />

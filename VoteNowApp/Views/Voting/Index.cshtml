@@ -1,0 +1,24 @@
+﻿<!-- Voting/Index.cshtml -->
+@model List<VoteNowApp.Models.Model.CandidateModel>
+
+<h2 class="text-light">Vote Wisely</h2>
+<form method="post" action="@Url.Action("Vote")">
+    @foreach (var positionGroup in Model.GroupBy(candidate => candidate.position))
+    {
+        <div class="position-container">
+            <h3>@positionGroup.Key</h3>
+            @foreach (var candidate in positionGroup)
+            {
+                <div>
+                    <label>
+                        <input type="radio" name="selectedCandidates[@positionGroup.Key]" value="@candidate.Id" /> @candidate.candidatename
+                    </label>
+                </div>
+            }
+        </div>
+    }
+    <button type="submit">Vote</button>
+
+</form>
+<link href="~/css/votingindex.css" rel="stylesheet" />
+<link href="~/css/body.css" rel="stylesheet" />

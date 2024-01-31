@@ -1,0 +1,33 @@
+﻿@model List<VoteNowApp.Models.Model.CandidateModel>
+@{
+}
+<h1 class="text-light">Candidates</h1>
+<p>
+<a class='btn btn-primary btn-sm' asp-controller="Candidate" asp-action="Add">New Candidate</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Candidate Name</th>
+            <th>Id Number</th>
+            <th>Course</th>
+            <th>Year Level</th>
+            <th>Position</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var Candidate in Model)
+        {
+            <tr>
+                <td>@Candidate.candidatename</td>
+                <td>@Candidate.number</td>
+                <td>@Candidate.course</td>
+                <td>@Candidate.yearlevel</td>
+                <td>@Candidate.position</td>
+                <td><a class="btn btn-dark" href="Candidate/View/@Candidate.Id">Options</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<link href="~/css/table.css" rel="stylesheet" />
