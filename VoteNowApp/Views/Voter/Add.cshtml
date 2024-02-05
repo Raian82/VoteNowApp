@@ -1,12 +1,12 @@
-﻿@model VoteNowApp.Models.ViewModel.AddCandidateViewModel
+﻿@model VoteNowApp.Models.ViewModel.AddVoterViewModel
 @{
 }
 
-<h1 class="text-light">Add Candidate</h1>
+<h1 class="text-light">Add Voter</h1>
 <form method="post" action="Add" class="mt-5">
     <div class="mb-3">
-        <label for="" class="form-label text-light">Candidate Name</label>
-        <input type="text" class="form-control" asp-for="candidatename" required>
+        <label for="" class="form-label text-light">Voter Name</label>
+        <input type="text" class="form-control" asp-for="votername" required>
     </div>
     <div class="mb-3">
         <label for="" class="form-label text-light">ID Number</label>
@@ -33,13 +33,11 @@
         </select>
     </div>
     <div class="mb-3">
-        <label for="" class="form-label text-light">Position</label>
-        <select asp-for="position" asp-items="Model.Positions" class="form-control">
-            <option>-- Select Position --</option>
-        </select>
+        <label for="" class="form-label text-light">Password</label>
+        <input type="password" class="form-control" asp-for="password" required>
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-    <a class='btn btn-danger' asp-controller="Candidate" asp-action="Index">Cancel</a>
+    <a class='btn btn-danger' asp-controller="Voter" asp-action="Index">Cancel</a>
 </form>
 <link href="~/css/body.css" rel="stylesheet" />

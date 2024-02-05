@@ -15,6 +15,7 @@ public class VoteDBContext : IdentityDbContext<IdentityUser>
     public DbSet<CandidateModel> Candidates { get; set; }
     public DbSet<PositionModel> Positions { get; set; }
     public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+    public DbSet<VoterModel> Voters { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
